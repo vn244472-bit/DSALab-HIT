@@ -5,11 +5,13 @@ Tư duy đệ quy, phân tích cây đệ quy, cài đặt Backtracking.
 
 ---
 
+
 ### Bài 1: Đệ quy cơ bản ⭐⭐
 Cài đặt: Fibonacci (naive + memo), giai thừa, tháp Hà Nội. Vẽ cây đệ quy cho Fibonacci(5).
 #include <iostream>
 #include <vector>
 using namespace std;
+
 
 //================== Giai thua ==================
 long long factorial(int n)
@@ -19,6 +21,7 @@ long long factorial(int n)
     return n * factorial(n - 1);
 }
 
+
 //================== Fibonacci Naive ==================
 long long fibNaive(int n)
 {
@@ -27,14 +30,18 @@ long long fibNaive(int n)
     return fibNaive(n - 1) + fibNaive(n - 2);
 }
 
+
 //================== Fibonacci Memo ==================
 vector<long long> memo(1000, -1);
 
 long long fibMemo(int n)
+
 {
+   
     if (n <= 1)
         return n;
 
+  
     if (memo[n] != -1)
         return memo[n];
 
@@ -42,6 +49,7 @@ long long fibMemo(int n)
 
     return memo[n];
 }
+
 
 //================== Thap Ha Noi ==================
 void hanoi(int n, char A, char B, char C)
@@ -59,31 +67,45 @@ void hanoi(int n, char A, char B, char C)
     hanoi(n - 1, B, A, C);
 }
 
+
 int main()
+
 {
+  
     int n = 5;
 
+   
     cout << "Factorial = " << factorial(n) << endl;
 
+  
     cout << "Fib Naive = " << fibNaive(n) << endl;
 
+   
     cout << "Fib Memo = " << fibMemo(n) << endl;
 
+   
     cout << "\nTower of Hanoi:\n";
 
+   
     hanoi(3, 'A', 'B', 'C');
 
+   
     return 0;
 }
+
 ### Bài 2: Sinh tổ hợp ⭐⭐
 Sinh tất cả tập con (Subsets) và hoán vị (Permutations) của mảng n phần tử bằng Backtracking.
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
+
 vector<int> a = {1,2,3};
 
+
 //////////////////// SUBSETS ////////////////////
+
 
 vector<int> subset;
 

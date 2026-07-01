@@ -13,36 +13,58 @@ Cài đặt: Fibonacci (naive + memo), giai thừa, tháp Hà Nội. Vẽ cây �
 using namespace std;
 
 
+
 //================== Giai thua ==================
+
 long long factorial(int n)
-{
-    if (n <= 1)
-        return 1;
-    return n * factorial(n - 1);
-}
-
-
-//================== Fibonacci Naive ==================
-long long fibNaive(int n)
-{
-    if (n <= 1)
-        return n;
-    return fibNaive(n - 1) + fibNaive(n - 2);
-}
-
-
-//================== Fibonacci Memo ==================
-vector<long long> memo(1000, -1);
-
-long long fibMemo(int n)
 
 {
    
     if (n <= 1)
+        
+        return 1;
+   
+    return n * factorial(n - 1);
+
+}
+
+
+
+//================== Fibonacci Naive ==================
+
+long long fibNaive(int n)
+
+{
+   
+    if (n <= 1)
+       
+        return n;
+    
+    return fibNaive(n - 1) + fibNaive(n - 2);
+
+}
+
+
+
+//================== Fibonacci Memo ==================
+
+vector<long long> memo(1000, -1);
+
+
+long long fibMemo(int n)
+
+
+{
+   
+  
+    if (n <= 1)
+      
         return n;
 
   
+  
     if (memo[n] != -1)
+        
         return memo[n];
 
     memo[n] = fibMemo(n - 1) + fibMemo(n - 2);
